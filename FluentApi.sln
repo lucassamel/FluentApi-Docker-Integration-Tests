@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.WebApi", "FluentApi.WebApi\FluentApi.WebApi.csproj", "{C0EEE620-74C0-4450-9DBE-957A3AF98785}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FE01F92E-9990-444D-A0BB-747AAD8ECC98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{336F8BB9-3613-4B9D-B267-0BEA52EE2BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.UnitTests", "FluentApi.UnitTests\FluentApi.UnitTests.csproj", "{2779891C-98A5-40F2-BB62-CBB766F25D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.Domain", "FluentApi.Domain\FluentApi.Domain.csproj", "{BAED6D98-1451-40F3-B83A-79B90667B4EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.Application", "FluentApi.Application\FluentApi.Application.csproj", "{EB3D204C-743E-4869-8EFA-AE3B3811B333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.Infrastructure", "FluentApi.Infrastructure\FluentApi.Infrastructure.csproj", "{9667EA05-9FAF-42E2-91EE-9C5B6B312218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentApi.IntegrationTests", "FluentApi.IntegrationTests\FluentApi.IntegrationTests.csproj", "{5423614A-A287-4990-8A44-6EF76AA9D1B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0EEE620-74C0-4450-9DBE-957A3AF98785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0EEE620-74C0-4450-9DBE-957A3AF98785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0EEE620-74C0-4450-9DBE-957A3AF98785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0EEE620-74C0-4450-9DBE-957A3AF98785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2779891C-98A5-40F2-BB62-CBB766F25D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2779891C-98A5-40F2-BB62-CBB766F25D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2779891C-98A5-40F2-BB62-CBB766F25D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2779891C-98A5-40F2-BB62-CBB766F25D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAED6D98-1451-40F3-B83A-79B90667B4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAED6D98-1451-40F3-B83A-79B90667B4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAED6D98-1451-40F3-B83A-79B90667B4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAED6D98-1451-40F3-B83A-79B90667B4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3D204C-743E-4869-8EFA-AE3B3811B333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3D204C-743E-4869-8EFA-AE3B3811B333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3D204C-743E-4869-8EFA-AE3B3811B333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3D204C-743E-4869-8EFA-AE3B3811B333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9667EA05-9FAF-42E2-91EE-9C5B6B312218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9667EA05-9FAF-42E2-91EE-9C5B6B312218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9667EA05-9FAF-42E2-91EE-9C5B6B312218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9667EA05-9FAF-42E2-91EE-9C5B6B312218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5423614A-A287-4990-8A44-6EF76AA9D1B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5423614A-A287-4990-8A44-6EF76AA9D1B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5423614A-A287-4990-8A44-6EF76AA9D1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5423614A-A287-4990-8A44-6EF76AA9D1B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0EEE620-74C0-4450-9DBE-957A3AF98785} = {FE01F92E-9990-444D-A0BB-747AAD8ECC98}
+		{2779891C-98A5-40F2-BB62-CBB766F25D5C} = {336F8BB9-3613-4B9D-B267-0BEA52EE2BFD}
+		{BAED6D98-1451-40F3-B83A-79B90667B4EC} = {FE01F92E-9990-444D-A0BB-747AAD8ECC98}
+		{EB3D204C-743E-4869-8EFA-AE3B3811B333} = {FE01F92E-9990-444D-A0BB-747AAD8ECC98}
+		{9667EA05-9FAF-42E2-91EE-9C5B6B312218} = {FE01F92E-9990-444D-A0BB-747AAD8ECC98}
+		{5423614A-A287-4990-8A44-6EF76AA9D1B0} = {336F8BB9-3613-4B9D-B267-0BEA52EE2BFD}
+	EndGlobalSection
+EndGlobal
