@@ -1,0 +1,7 @@
+namespace FluentApi.Domain.Repositories;
+
+public interface IStudentRepository
+{
+    Task AddAsync(Student student, CancellationToken ct);
+    Task<Student?> GetByIdAsync(Guid id, CancellationToken ct);
+}
