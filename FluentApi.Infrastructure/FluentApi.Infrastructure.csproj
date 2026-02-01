@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FluentApi.Application\FluentApi.Application.csproj" />
       <ProjectReference Include="..\FluentApi.Domain\FluentApi.Domain.csproj" />
     </ItemGroup>
 
