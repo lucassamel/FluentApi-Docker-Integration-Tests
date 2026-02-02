@@ -1,16 +1,16 @@
 using FluentApi.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace FluentApi.Infrastructure.Persistence;
 
 public class AppDbContext : DbContext
 {
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     public DbSet<Student> Students => Set<Student>();
     public DbSet<StudentProfile> StudentProfiles => Set<StudentProfile>();
     public DbSet<Course> Courses => Set<Course>();
     public DbSet<StudentCourse> StudentCourses => Set<StudentCourse>();
-
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder b)
     {
@@ -62,5 +62,13 @@ public class AppDbContext : DbContext
                 .WithMany(x => x.StudentCourses)
                 .HasForeignKey(x => x.CourseId);
         });
+    }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+#if DEBUG
+        optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information)
+            .EnableSensitiveDataLogging();
+#endif
     }
 }
