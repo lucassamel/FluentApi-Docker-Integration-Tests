@@ -3,8 +3,10 @@ using FluentApi.Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace FluentApi.Api.Common;
+namespace FluentApi.Api.Controllers.Common;
 
+[ApiController]
+[Route("api/[controller]")]
 public class ApiControllerBase : ControllerBase
 {
     protected Response<IEnumerable<string>> ModelStateBadRequest(ModelStateDictionary modelstate)

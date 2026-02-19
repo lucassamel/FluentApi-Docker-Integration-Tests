@@ -1,5 +1,5 @@
-using FluentApi.Application.Course;
-using FluentApi.Application.Students;
+using FluentApi.Application.Dtos.Students;
+using FluentApi.Application.Services.Course;
 using FluentApi.Infrastructure;
 using FluentApi.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
