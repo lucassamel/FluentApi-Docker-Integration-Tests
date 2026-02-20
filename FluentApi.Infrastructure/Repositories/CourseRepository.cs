@@ -1,4 +1,4 @@
-using FluentApi.Domain;
+using FluentApi.Domain.Entities;
 using FluentApi.Domain.Repositories;
 using FluentApi.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -15,4 +15,11 @@ public class CourseRepository(AppDbContext context) : ICourseRepository
 
     public Task<Course?> GetByIdAsync(Guid id, CancellationToken ct)
         => context.Courses.FirstOrDefaultAsync(x => x.Id == id, ct);
+
+    public async Task<IEnumerable<Course?>> GetAllAsync(CancellationToken ct)
+    {
+        var courses = await context.Courses.AsNoTracking().ToListAsync(cancellationToken: ct);
+
+        return courses;
+    }
 }

@@ -23,7 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FluentApi.Infrastructure\FluentApi.Infrastructure.csproj" />
-      <ProjectReference Include="..\FluentApi.WebApi\FluentApi.WebApi.csproj" />
+      <ProjectReference Include="..\FluentApi.Api\FluentApi.Api.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 using FluentApi.Domain;
 using FluentApi.Domain.Repositories;
 
-namespace FluentApi.Application.Dtos.Students;
+namespace FluentApi.Application.Services.Students;
 
 public class StudentService(IStudentRepository studentRepository, IEnrollmentRepository enrollmentRepository,
     ICourseRepository courseRepository)

@@ -1,7 +1,9 @@
-using FluentApi.Application.Dtos.Students;
 using FluentApi.Application.Services.Course;
+using FluentApi.Application.Services.Students;
+using FluentApi.Domain.Repositories;
 using FluentApi.Infrastructure;
 using FluentApi.Infrastructure.Persistence;
+using FluentApi.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +12,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
                        ?? throw new InvalidOperationException("Connection string 'DefaultConnection' não encontrada.");
 
 builder.Services
-    .AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
-
+    .AddDbContext<AppDbContext>(options =>
+    {
+        options.UseSqlServer(connectionString);
+    });
 
 
 builder.Services.AddControllers();
@@ -19,9 +23,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddScoped<StudentService>();
-builder.Services.AddScoped<CourseService>();
 
+#region Services DI
+
+builder.Services.AddScoped<StudentService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+
+#endregion
+
+#region Repository DI
+
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
+#endregion
 
 var app = builder.Build();
 

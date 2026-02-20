@@ -1,4 +1,4 @@
-namespace FluentApi.Domain;
+namespace FluentApi.Domain.Entities;
 
 public class Course
 {
@@ -15,4 +15,6 @@ public class Course
 
         Title = title.Trim();
     }
+
+    
 }
