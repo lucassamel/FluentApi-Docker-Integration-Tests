@@ -17,6 +17,18 @@ public class CourseController(ICourseService courseService) : ApiControllerBase
             return BadRequest(new Response<IEnumerable<string>>(ModelState.GetErrors()));
         
         var courses = await courseService.GetCoursesAsync(ct);
-        return  Ok(courses);
+        
+        return  Ok(new Response<IEnumerable<CourseDto>>(courses));
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<CourseDto>> Create(CourseRequest courseDto, CancellationToken ct)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(new Response<IEnumerable<string>>(ModelState.GetErrors()));
+
+        var courseDtoAdded = await courseService.AddCourseAsync(courseDto, ct);
+        
+        return Ok(new Response<CourseDto>(courseDtoAdded));
     }
 }

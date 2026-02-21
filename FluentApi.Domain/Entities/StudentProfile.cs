@@ -1,4 +1,4 @@
-namespace FluentApi.Domain;
+namespace FluentApi.Domain.Entities;
 
 public class StudentProfile
 {
@@ -19,5 +19,11 @@ public class StudentProfile
         StudentId = studentId;
         Email = email.Trim().ToLowerInvariant();
         BirthDate = birthDate;
+    }
+
+    public StudentProfile(string profileEmail, DateOnly profileBirthDate)
+    {
+        Email = profileEmail.Trim().ToLowerInvariant();
+        BirthDate = profileBirthDate;
     }
 }

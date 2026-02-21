@@ -23,4 +23,13 @@ public class CourseService(ICourseRepository coursesRepository) : ICourseService
         
         return coursesDto;
     }
+
+    public async Task<CourseDto> AddCourseAsync(CourseRequest courseRequest, CancellationToken ct)
+    {
+        var courseAdded = await coursesRepository.AddAsync(new Domain.Entities.Course(courseRequest.Title), ct);
+        
+        return (CourseDto)courseAdded;
+    }
+
+   
 }

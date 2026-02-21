@@ -1,4 +1,5 @@
 using FluentApi.Domain;
+using FluentApi.Domain.Entities;
 using FluentApi.Domain.Repositories;
 using FluentApi.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;

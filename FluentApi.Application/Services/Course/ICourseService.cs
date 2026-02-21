@@ -5,4 +5,5 @@ namespace FluentApi.Application.Services.Course;
 public interface ICourseService
 {
     Task<IEnumerable<CourseDto>> GetCoursesAsync(CancellationToken ct);
+    Task<CourseDto> AddCourseAsync (CourseRequest course, CancellationToken ct);
 }

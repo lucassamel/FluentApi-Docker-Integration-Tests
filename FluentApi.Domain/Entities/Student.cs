@@ -1,4 +1,6 @@
-﻿namespace FluentApi.Domain;
+﻿using FluentApi.Domain.Entities;
+
+namespace FluentApi.Domain;
 
 public class Student
 {
@@ -10,7 +12,7 @@ public class Student
     public StudentProfile? Profile { get; private set; }
 
     // N:N
-    public List<StudentCourse> StudentCourses { get; private set; } = new();
+    public List<StudentCourse?> StudentCourses { get; private set; } = new();
 
     private Student() { } // EF
 
@@ -21,9 +23,17 @@ public class Student
 
         Name = name.Trim();
     }
-
+    
+    public Student(Guid id ,string name, StudentProfile? profileStudent)
+    {
+        Id = id; 
+        Name = name;
+        Profile = profileStudent;
+    }
     public void SetProfile(string email, DateOnly birthDate)
     {
         Profile = new StudentProfile(Id, email, birthDate);
     }
+
+    
 }

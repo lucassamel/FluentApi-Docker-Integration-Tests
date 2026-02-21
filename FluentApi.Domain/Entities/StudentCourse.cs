@@ -1,6 +1,4 @@
-using FluentApi.Domain.Entities;
-
-namespace FluentApi.Domain;
+namespace FluentApi.Domain.Entities;
 
 public class StudentCourse
 {

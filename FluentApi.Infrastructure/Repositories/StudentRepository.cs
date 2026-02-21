@@ -1,4 +1,5 @@
 using FluentApi.Domain;
+using FluentApi.Domain.Entities;
 using FluentApi.Domain.Repositories;
 using FluentApi.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -15,18 +16,14 @@ public class StudentRepository(AppDbContext context) : IStudentRepository
 
     public Task<Student?> GetByIdAsync(Guid id, CancellationToken ct)
         => context.Students
-            .Include(x => x.Profile)
-            .FirstOrDefaultAsync(x => x.Id == id, ct);
-
-    public void Remove(Student student)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<int> SaveChangesAsync(CancellationToken ct)
-    {
-        throw new NotImplementedException();
-    }
+            .AsNoTracking()
+            .Where(x => x.Id == id)
+            .Select(x => new Student(
+                x.Id,
+                x.Name,
+                x.Profile == null ? null : new StudentProfile(x.Profile.Email, x.Profile.BirthDate)
+            ))
+            .FirstOrDefaultAsync(ct);
 
     public Task<List<Student>> GetStudentsAsync(CancellationToken ct)
     {

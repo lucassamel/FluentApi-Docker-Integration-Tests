@@ -26,7 +26,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 
 #region Services DI
 
-builder.Services.AddScoped<StudentService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 
 #endregion

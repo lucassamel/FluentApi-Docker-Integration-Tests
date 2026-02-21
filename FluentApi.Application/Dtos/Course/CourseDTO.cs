@@ -15,3 +15,5 @@ public class CourseDto
         };
     }
 }
+
+public record CourseRequest(string Title);
